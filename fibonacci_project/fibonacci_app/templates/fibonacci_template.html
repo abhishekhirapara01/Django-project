@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Numbers</title>
+  </head>
+  <body>
+    <h2>Fibonacci Numbers {{n}}</h2>
+    <ul>
+      {% for num in fin_numbers %}
+      <li>{{num}}</li>
+      {% endfor %}
+    </ul>
+    <p>Execution Time: {{execution_time}} seconds.</p>
+  </body>
+</html>
