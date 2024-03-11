@@ -1,0 +1,23 @@
+{% extends 'home.html'%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="{% static '/style.css' %}">
+<body>
+
+{% for x in students2 %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Subjects</th>
+  </tr>
+    <tr>
+      <td>{{ x.Name }}</td>
+      <td>{{ x.Subjects }}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{%endblock%}
