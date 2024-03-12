@@ -3,21 +3,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="{% static '/style.css' %}">
-<body>
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+  <body>
+    <h1>Welcome to the Student Home Page</h1>
 
-{% for x in students2 %}
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Subjects</th>
-  </tr>
+  {% if students2 %}
+  <table class="center">
+    <tr>
+      <th>Name</th>
+      <th>Subjects</th>
+      <th>Profile Image</th>
+    </tr>
+  {% for x in students2 %}
     <tr>
       <td>{{ x.Name }}</td>
       <td>{{ x.Subjects }}</td>
+      <td><div class="item"><img src="{{ x.Image.url }}"  alt="Profile Image" width="100" height="100"></div></td>
     </tr>
-{% endfor %}
-</table>
-</body>
+  {% endfor %}
+  </table>
+  {% else %}
+      <p>No students available.</p>
+  {% endif %}
+  </body>
 </html>
 {%endblock%}
